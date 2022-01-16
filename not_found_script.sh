@@ -1,1 +1,1 @@
-echo "It was not found :("
+echo "This is not the text you are looking for..."
