@@ -2,11 +2,24 @@ from bs4 import BeautifulSoup
 import os
 import requests
 
-page = requests.get("https://twitter.com/bob/with_replies")
-something = BeautifulSoup(page.text, "html.parser")
-something.find_all(name="div", attrs={"class":"jobsearch-SerpJobCard"})
+print("Initialising...")
+os.system('./initialise.sh')
+print("Done initialising")
 
-print(something)
+with open('spreadsheet_id.txt', 'r') as file:
+    spreadsheet_id = file.read()
 
-# os.system('ls -l')
+url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/"
+page = requests.get(url)
+entire_page = BeautifulSoup(page.text, "html.parser")
+grid_div = entire_page.find(
+    name="div", attrs={"id": "0-grid-table-container"})
 
+to_search_for = "boot"
+
+found = bool(grid_div.findAll(text=to_search_for))
+
+if found:
+    os.system('./found_script.sh')
+else:
+    os.system('./not_found_script.sh')
