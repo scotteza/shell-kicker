@@ -10,8 +10,8 @@ with open('spreadsheet_id.txt', 'r') as file:
     spreadsheet_id = file.read().strip()
 
 url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/"
-print("Printing URL...")
-print(url)
+# print("Printing URL...")
+# print(url)
 response = requests.get(url)
 if response.status_code != 200:
     print(f"Error, got response code {response.status_code}. Please check your spreadsheet ID. Exiting...")
