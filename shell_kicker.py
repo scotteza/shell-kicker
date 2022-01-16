@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 import os
 import requests
 
-print("Initialising...")
-os.system('./initialise.sh')
-print("Done initialising")
+# print("Initialising...")
+# os.system('./initialise.sh')
+# print("Done initialising")
 
 with open('spreadsheet_id.txt', 'r') as file:
     spreadsheet_id = file.read()
