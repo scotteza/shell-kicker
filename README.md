@@ -16,6 +16,4 @@ Change the value of the variable `to_search_for` in the `shell_kicker.py` script
 
 ## Newline characters
 
-If you are having issues with line endings, run this:
-
-`dos2unix ./initialise.sh ./found_script.sh ./not_found_script.sh`
+If you are having issues with line endings, run this `dos2unix ./initialise.sh ./found_script.sh ./not_found_script.sh`
